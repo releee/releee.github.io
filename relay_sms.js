@@ -13,12 +13,12 @@ let count; // 用于统计短信的条数
 const smsChecker = setInterval(checkSms, checkSmsInterval);
 
 //检查是否存在相同进程
-exec('ps -ef | grep \'[n]ode relay_sms.js\' | wc -l', (error, stdout, stderr) => {
+exec('pgrep relay_sms', (error, stdout, stderr) => {
     if (error) {
         console.error(`Error: ${error}`);
         return;
     }
-    if (stdout > 1) {
+    if (stdout) {
         console.error('进程已存在');
         // 清理定时器
         clearInterval(smsChecker);
