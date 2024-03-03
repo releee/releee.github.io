@@ -157,7 +157,7 @@ EOM
 # Utility function to touchup Alpine
 
 finalwork() {
-	[ ! -e ${DESTINATION}/finaltouchup.sh ] && curl --silent -LO https://ghproxy.net/https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/finaltouchup.sh
+	[ ! -e ${DESTINATION}/finaltouchup.sh ] && curl --silent -LO https://ghproxy.net/https://raw.githubusercontent.com/releee/releee.github.io/main/TermuxAlpine/finaltouchup.sh
 	if [ "${MOTD}" = "ON" ]; then
 		bash ${DESTINATION}/finaltouchup.sh --add-motd
 	else
